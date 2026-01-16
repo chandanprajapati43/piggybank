@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SaveSmart - Digital Piggy Bank</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+
+    <!-- Google Charts -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+<body>
+
+<div class="container">
+    <h1>🐷 SaveSmart</h1>
+    <p>Digital Piggy Bank – Save Money Smartly</p>
+
+    <!-- Google Sign-In -->
+    <button onclick="googleLogin()">Sign in with Google</button>
+    <p id="userName"></p>
+
+    <!-- Set Goal -->
+    <div class="card">
+        <h2>Set Saving Goal</h2>
+        <input type="number" id="goal" placeholder="Enter Goal Amount">
+        <button onclick="setGoal()">Set Goal</button>
+    </div>
+
+    <!-- Add Money -->
+    <div class="card">
+        <h2>Add Money</h2>
+        <input type="number" id="amount" placeholder="Enter Amount">
+        <button onclick="addMoney()">Add Money</button>
+    </div>
+
+    <!-- Progress -->
+    <div class="card">
+        <h2>Progress</h2>
+        <p>Saved: ₹<span id="saved">0</span></p>
+        <p>Goal: ₹<span id="goalDisplay">0</span></p>
+        <div class="progress-bar">
+            <div class="progress" id="progress"></div>
+        </div>
+        <p id="message"></p>
+    </div>
+
+    <!-- Savings Chart -->
+    <div class="card">
+        <h2>Savings Chart</h2>
+        <div id="chart" style="width:100%; height:300px;"></div>
+    </div>
+</div>
+
+<script src="script.js" type="module"></script>
+</body>
+</html>
